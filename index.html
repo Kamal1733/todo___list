@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body  >
+    <div style="display: flex; justify-content: center;">
+      <div
+        style="
+          border: 2px solid black;
+          background-color: rgb(131, 229, 190);
+          height: 150px;
+          width: 420px;
+          align-items: center;
+        "
+      >
+        <h3 style="text-align: center;">TODO_LIST</h3>
+
+        <div style="text-align: center">
+          <input style="height: 30px;"  type="text" name="" id="inpp" placeholder="Add your task" />
+          <button onclick="fun()"   style="height: 30px; background-color: rgb(210, 222, 175); border-radius:5px;" >Add To Do</button>
+        </div>
+      </div>
+    </div>
+ <hr>
+    <div
+      style="
+        margin-top: 90px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      "
+    >
+      <div
+        id="list"
+        style="
+          border: 1px solid black;         
+         width: 400px;
+          height: fit-content; 
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          
+        "
+     >
+     <p>YOUR TASKS!!</p>
+
+    </div>
+
+    <script>
+      function fun() {
+        let c = document.getElementById("inpp").value;
+        document.getElementById("inpp").value = "";
+        let divv= document.createElement('div');
+        //var inner="inner"+ Math.random().toString(16).slice(2);
+
+        divv.className="inner";
+         divv.style.display="flex";
+         divv.style.marginTop="15px"
+        // divv.style.height="60px"
+        // divv.style.height="60px";
+        // divv.style.width="250px";
+        const para = document.createElement("h3");
+        para.id="text";
+        para.innerText = c;
+        let button = document.createElement("button");
+        button.innerText="REMOVE"
+        button.id="btn";
+        button.addEventListener("click",function () {this.parentNode.remove()});
+
+        let s=document.createElement("s");
+        s.innerText=c;
+
+      let input= document.createElement("input");
+        input.type="checkbox";
+        input.className="check";
+        input.style.height="20px";
+        input.style.width="20px";
+      
+        input.addEventListener("click", function(){if(input.checked==true){
+          this.nextSibling.innerText="";
+          this.nextSibling.appendChild(s);
+        }
+        else if(input.checked==false){
+  
+          this.nextSibling.innerText=c;
+        }
+        
+      
+      
+      });
+       
+
+      if(c!=""){
+        document.getElementById("list").appendChild(divv);
+        divv.appendChild(input);
+        divv.appendChild(para);
+        divv.appendChild(button);
+      }
+        // document.getElementById("list").appendChild(bre);
+          
+      }
+ 
+
+   
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+/* .box{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+} */
+#btn{
+    border-radius: 10px;
+    width: 100px;
+    margin-left: 20px;
+    height: 40px;
+    background-color: rgb(234, 124, 124);
+   
+}
+#text{
+    margin-left: 40px;
+    
+}
+.inner{
+    border: 1px solid red;
+    align-items: center;
+    width: 400px;
+    justify-content:space-between;
+    background-color: rgb(135, 189, 186);
+      margin-bottom: 20px;
+    /* margin-right: 2px;
+    margin-left: 2px; */
+   
+
+
+    
+}
+#list{
+    background-color:rgb(244, 214, 138);
+}
+body{
+    background-color: rgb(216, 223, 235);
+}
